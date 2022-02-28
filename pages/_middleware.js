@@ -5,7 +5,9 @@ import jwt from "jsonwebtoken";
 const secret = process.env.REFRESH_TOKEN_SECRET;
 
 export function middleware(req) {
-  const url = req.url;
+  const url = req.nextUrl.clone();
+  const pathName = url.pathname;
+
   const ref_token = req.cookies.refreshtoken;
 
   try {
@@ -14,7 +16,7 @@ export function middleware(req) {
     const isMatch = jwt.verify(ref_token, secret);
     if (!isMatch) return NextResponse.redirect("/login");
 
-    if (url.includes("/dashboard") && !isMatch)
+    if (pathName.includes("/dashboard") && !isMatch)
       return NextResponse.redirect("/login");
 
     return NextResponse.next();
