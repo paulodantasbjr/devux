@@ -9,11 +9,11 @@ connectDB();
 
 export default async function accessToken(req, res) {
   try {
-    const rf_token = req.cookies.refreshtoken;
-    if (!rf_token)
+    const ref_token = req.cookies.refreshtoken;
+    if (!ref_token)
       return res.status(400).json({ err: "Por favor realize o login!" });
 
-    const result = jwt.verify(rf_token, process.env.REFRESH_TOKEN_SECRET);
+    const result = jwt.verify(ref_token, process.env.REFRESH_TOKEN_SECRET);
     if (!result)
       return res
         .status(400)
