@@ -4,9 +4,9 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import Cookie from "js-cookie";
 
-import { StyledContainerLogin } from "./styled";
-import { DataContext } from "../../store/GlobalState";
-import { postData } from "../../utils/fetchData";
+import { StyledContainerLogin } from "../styles/login/styled";
+import { DataContext } from "../store/GlobalState";
+import { postData } from "../utils/fetchData";
 
 const Login = () => {
   const initialState = { email: "", password: "" };

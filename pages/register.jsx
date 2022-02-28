@@ -4,12 +4,12 @@ import Link from "next/link";
 
 import { useRouter } from "next/router";
 
-import valid from "../../utils/valid";
+import valid from "../utils/valid";
 
-import { DataContext } from "../../store/GlobalState";
-import { postData } from "../../utils/fetchData";
+import { DataContext } from "../store/GlobalState";
+import { postData } from "../utils/fetchData";
 
-import { StyledContainerRegister } from "./styled";
+import { StyledContainerRegister } from "../styles/register/styled";
 
 const Register = () => {
   const initialState = { name: "", email: "", password: "", cf_password: "" };
