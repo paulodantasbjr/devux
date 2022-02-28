@@ -11,7 +11,7 @@ import { postData } from "../../utils/fetchData";
 
 import { StyledContainerRegister } from "./styled";
 
-const register = () => {
+const Register = () => {
   const initialState = { name: "", email: "", password: "", cf_password: "" };
   const [userData, setUserData] = useState(initialState);
   const { name, email, password, cf_password } = userData;
@@ -44,7 +44,7 @@ const register = () => {
 
   useEffect(() => {
     if (Object.keys(auth).length !== 0) router.push("/dashboard");
-  }, [auth]);
+  }, [auth, router]);
 
   return (
     <>
@@ -91,4 +91,4 @@ const register = () => {
   );
 };
 
-export default register;
+export default Register;

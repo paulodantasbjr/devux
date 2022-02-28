@@ -8,7 +8,7 @@ import { StyledContainerLogin } from "./styled";
 import { DataContext } from "../../store/GlobalState";
 import { postData } from "../../utils/fetchData";
 
-const login = () => {
+const Login = () => {
   const initialState = { email: "", password: "" };
   const [userData, setUserData] = useState(initialState);
   const { email, password } = userData;
@@ -29,7 +29,6 @@ const login = () => {
     dispatch({ type: "NOTIFY", payload: { loading: true } });
 
     const res = await postData("/login", userData);
-
     if (res.err)
       return dispatch({ type: "NOTIFY", payload: { error: res.err } });
 
@@ -53,7 +52,7 @@ const login = () => {
 
   useEffect(() => {
     if (Object.keys(auth).length !== 0) router.push("/dashboard");
-  }, [auth]);
+  }, [auth, router]);
 
   return (
     <>
@@ -94,4 +93,4 @@ const login = () => {
   );
 };
 
-export default login;
+export default Login;

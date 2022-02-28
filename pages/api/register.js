@@ -5,13 +5,13 @@ import Users from "../../model/userModel";
 
 connectDB();
 
-export default async (req, res) => {
+export default async function Register(req, res) {
   switch (req.method) {
     case "POST":
       await register(req, res);
       break;
   }
-};
+}
 
 const register = async (req, res) => {
   try {

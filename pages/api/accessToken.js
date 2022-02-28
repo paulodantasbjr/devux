@@ -7,7 +7,7 @@ import Users from "../../model/userModel";
 
 connectDB();
 
-export default async (req, res) => {
+export default async function accessToken(req, res) {
   try {
     const rf_token = req.cookies.refreshtoken;
     if (!rf_token)
@@ -33,4 +33,4 @@ export default async (req, res) => {
   } catch (err) {
     return res.status(500).json({ err: err.message });
   }
-};
+}

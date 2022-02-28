@@ -10,13 +10,13 @@ import {
 
 connectDB();
 
-export default async (req, res) => {
+export default async function Login(req, res) {
   switch (req.method) {
     case "POST":
       await login(req, res);
       break;
   }
-};
+}
 
 const login = async (req, res) => {
   try {
