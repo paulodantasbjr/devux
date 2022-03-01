@@ -1,7 +1,7 @@
 import bcrypt from "bcrypt";
 
 import connectDB from "../../utils/connectDB";
-import Users from "../../model/userModel";
+import User from "../../model/User";
 
 connectDB();
 
@@ -17,12 +17,12 @@ const register = async (req, res) => {
   try {
     const { name, email, password } = req.body;
 
-    const user = await Users.findOne({ email });
+    const user = await User.findOne({ email });
     if (user) return res.status(400).json({ err: "Esse email já existe." });
 
     const passwordHash = await bcrypt.hash(password, 12);
 
-    const newUser = new Users({
+    const newUser = new User({
       name,
       email,
       password: passwordHash,

@@ -1,7 +1,7 @@
 import bcrypt from "bcrypt";
 
 import connectDB from "../../utils/connectDB";
-import Users from "../../model/userModel";
+import User from "../../model/User";
 
 import {
   createAccessToken,
@@ -22,7 +22,7 @@ const login = async (req, res) => {
   try {
     const { email, password } = req.body;
 
-    const user = await Users.findOne({ email });
+    const user = await User.findOne({ email });
     if (!user) return res.status(400).json({ err: "Usuário não existe." });
 
     const isMatch = await bcrypt.compare(password, user.password);
