@@ -16,7 +16,7 @@ const Dashboard = () => {
     dispatch({ type: "AUTH", payload: {} });
     dispatch({ type: "NOTIFY", payload: { success: "Desconectado!" } });
 
-    return router.push("/");
+    return router.push("/login");
   };
 
   return (
