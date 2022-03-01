@@ -14,6 +14,7 @@ export const Notify = () => {
         <Toast
           msg={{ msg: notify.error, title: "Error" }}
           handleShow={() => dispatch({ type: "NOTIFY", payload: {} })}
+          type="error"
         />
       )}
 
@@ -21,6 +22,7 @@ export const Notify = () => {
         <Toast
           msg={{ msg: notify.success, title: "Success" }}
           handleShow={() => dispatch({ type: "NOTIFY", payload: {} })}
+          type="success"
         />
       )}
     </>

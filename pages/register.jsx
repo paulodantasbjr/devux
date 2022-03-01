@@ -49,42 +49,53 @@ const Register = () => {
   return (
     <>
       <Head>
-        <title>Register Page</title>
+        <title>DEVUX - Cadastro</title>
       </Head>
       <StyledContainerRegister>
+        <h2>DevUX - Cadastro</h2>
         <form onSubmit={handleSubmit}>
-          <label htmlFor="name">Name</label>
-          <input
-            type="text"
-            name="name"
-            value={name}
-            onChange={handleChangeInput}
-          />
-          <label htmlFor="email">Email</label>
-          <input
-            type="email"
-            name="email"
-            value={email}
-            onChange={handleChangeInput}
-          />
-          <label htmlFor="password">Senha</label>
-          <input
-            type="password"
-            name="password"
-            value={password}
-            onChange={handleChangeInput}
-          />
-          <label htmlFor="cf_password">Confirme a senha</label>
-          <input
-            type="password"
-            name="cf_password"
-            value={cf_password}
-            onChange={handleChangeInput}
-          />
-          <button type="submit">Registrar</button>
+          <div>
+            <label htmlFor="name">Name</label>
+            <input
+              type="text"
+              name="name"
+              value={name}
+              onChange={handleChangeInput}
+            />
+          </div>
+          <div>
+            <label htmlFor="email">Email</label>
+            <input
+              type="email"
+              name="email"
+              value={email}
+              onChange={handleChangeInput}
+            />
+          </div>
+          <div>
+            <label htmlFor="password">Senha</label>
+            <input
+              type="password"
+              name="password"
+              value={password}
+              onChange={handleChangeInput}
+            />
+          </div>
+          <div>
+            <label htmlFor="cf_password">Confirme a senha</label>
+            <input
+              type="password"
+              name="cf_password"
+              value={cf_password}
+              onChange={handleChangeInput}
+            />
+          </div>
+          <div>
+            <button type="submit">Cadastrar</button>
+          </div>
         </form>
         <Link href="/login">
-          <a>Login</a>
+          <a>Voltar</a>
         </Link>
       </StyledContainerRegister>
     </>

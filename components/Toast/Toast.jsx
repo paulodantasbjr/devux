@@ -1,7 +1,9 @@
-export const Toast = ({ msg, handleShow, bgColor }) => {
+import { StyledContainerToast } from "./styled";
+
+export const Toast = ({ msg, handleShow, type }) => {
   return (
-    <div>
-      <div>
+    <StyledContainerToast type={type}>
+      <div className="title">
         <strong>{msg.title}</strong>
 
         <button type="button" onClick={handleShow}>
@@ -9,7 +11,7 @@ export const Toast = ({ msg, handleShow, bgColor }) => {
         </button>
       </div>
 
-      <div>{msg.msg}</div>
-    </div>
+      <div className="description">{msg.msg}</div>
+    </StyledContainerToast>
   );
 };

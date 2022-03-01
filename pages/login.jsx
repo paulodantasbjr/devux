@@ -57,36 +57,36 @@ const Login = () => {
   return (
     <>
       <Head>
-        <title>Pagina de login</title>
+        <title>DEVUX - Login</title>
       </Head>
 
       <StyledContainerLogin>
+        <h2>DevUX - Login</h2>
         <form onSubmit={handleSubmit}>
-          <label htmlFor="exampleInputEmail1">Email address</label>
-          <input
-            type="email"
-            className="form-control"
-            id="exampleInputEmail1"
-            aria-describedby="emailHelp"
-            name="email"
-            value={email}
-            onChange={handleChangeInput}
-          />
-
-          <label htmlFor="exampleInputPassword1">Password</label>
-          <input
-            type="password"
-            className="form-control"
-            id="exampleInputPassword1"
-            name="password"
-            value={password}
-            onChange={handleChangeInput}
-          />
-          <button type="submit">Login</button>
+          <div>
+            <label htmlFor="email">Email</label>
+            <input
+              type="email"
+              name="email"
+              value={email}
+              onChange={handleChangeInput}
+            />
+          </div>
+          <div>
+            <label htmlFor="password">Senha</label>
+            <input
+              type="password"
+              name="password"
+              value={password}
+              onChange={handleChangeInput}
+            />
+          </div>
+          <div>
+            <button type="submit">Login</button>
+          </div>
         </form>
-
         <Link href="/register">
-          <a>Register</a>
+          <a>Cadastrar</a>
         </Link>
       </StyledContainerLogin>
     </>
