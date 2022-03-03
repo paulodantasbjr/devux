@@ -6,10 +6,12 @@ export const GlobalStyle = createGlobalStyle`
     padding: 0;
     box-sizing: border-box;
 
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Manrope', sans-serif;
     font-weight: 400;
+    font-style: normal;
     font-size: 1.6rem ;
   }
+
   html{
     font-size: 62.5%;
 
@@ -19,6 +21,14 @@ export const GlobalStyle = createGlobalStyle`
 
     @media screen and (max-width: 1280px){
       font-size: 93.75%;
+    }
+
+    a{
+      text-decoration: none;
+    }
+
+    button{
+      cursor: pointer;
     }
   }
 

@@ -96,7 +96,7 @@ const Register = () => {
             <button type="submit">Cadastrar</button>
           </div>
         </form>
-        <Link href="/login">
+        <Link href="/">
           <a>Voltar</a>
         </Link>
       </StyledContainerRegister>
